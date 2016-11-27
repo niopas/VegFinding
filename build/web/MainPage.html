@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<title>Main Page</title>
+
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" type="text/css" href="CSS/MainPageStyle.css">
+
+<body>
+
+
+<ul>
+    <li><a class="active" href="#home">Veg<span>Finding</span></a></li>
+  <li><a href="#profile">Profile</a></li>
+  <li><a href="GoogleMaps.html">Find food</a></li>
+  <li><a href="#contact">Contact us</a></li>
+</ul>
+    
+    
+    
+    
+    
+    
+    
+<!-- Automatic Slideshow Images -->
+  <div class="mySlides w3-display-container w3-center">
+    <img src="CSS/images/autoimage1.jpg" style="width:100%">
+  </div>
+  <div class="mySlides w3-display-container w3-center">
+    <img src="CSS/images/autoimage2.jpg" style="width:100%">
+  </div>
+  <div class="mySlides w3-display-container w3-center">
+    <img src="CSS/images/autoimage3.jpg" style="width:100%">
+  </div>
+
+
+
+<script>
+// Automatic Slideshow - change image every 4 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 5000);    
+}
+</script>
+
+</body>
+</html>

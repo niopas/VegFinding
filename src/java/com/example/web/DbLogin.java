@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.sql.*;
+import javax.servlet.RequestDispatcher;
 
 /**
  *
@@ -46,6 +47,8 @@ public class DbLogin extends HttpServlet {
             rs = pst.executeQuery();
             if (rs.next()) {
                 out.println("Good");
+                RequestDispatcher view = request.getRequestDispatcher("MainPage.html");
+                view.forward(request, response);
             }
             else {
                 out.println("Wrong username and password. Try again.");
