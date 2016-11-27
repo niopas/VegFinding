@@ -12,17 +12,20 @@
 </head>
 
 <body>
-  <form class="loginCheck" action="Register.do" method="post">
+  <form class="loginCheck" action="DbRegister.do" method="post">
   <div class="body"></div>
 		<div class="grad"></div>
 		<div class="header">
 			<div>Veg<span>Finding</span></div>
 		</div>
+                <div class="subheader">
+                    <div>Find <span>Vegetarian</span> and <span>Vegan</span> food near you</div>
+                </div>
 		<br>
 		<div class="login">
 				<input type="text" placeholder="Choose a username*" name="username" required><br>
 				<input type="password" placeholder="Enter password*" name="password" required><br>
-                                <input type="password" placeholder="Re-enter password*" name="password" required><br>
+                                <input type="password" placeholder="Re-enter password*" name="re_password" required><br>
                                 <input type="email" placeholder="Enter an email*" name="email" required><br>
 				<input type="submit" value="Register">
                                 <input type="button" onclick="window.location.href='index.html'" value="Back">

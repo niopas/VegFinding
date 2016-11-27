@@ -42,7 +42,7 @@ body{
 .header{
 	position: absolute;
 	top: calc(50% - 35px);
-	left: calc(50% - 335px);
+	left: calc(50% - 345px);
 	z-index: 2;
 }
 
@@ -55,7 +55,26 @@ body{
 }
 
 .header div span{
-	color: #21610B !important;
+	color: #01DF01 !important;
+}
+
+.subheader{
+	position: absolute;
+	top: calc(50% + 35px);
+	left: calc(50% - 375px);
+	z-index: 2;
+}
+
+.subheader div{
+	float: left;
+	color: #fff;
+	font-family: 'Exo', sans-serif;
+	font-size: 18px;
+	font-weight: 200;
+}
+
+.subheader div span{
+	color: #01DF01 !important;
 }
 
 .login{
