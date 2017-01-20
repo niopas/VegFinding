@@ -3,9 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/nick/NetBeansProjects/VegFinding/web/index.html</file>
-            <file>file:/home/nick/NetBeansProjects/VegFinding/web/CSS/indexStyle.css</file>
-            <file>file:/home/nick/NetBeansProjects/VegFinding/src/java/com/example/web/UthLogin.java</file>
+            <file>file:/home/nick/NetBeansProjects/VegFinding/src/java/com/example/web/DbRegister.java</file>
+            <file>file:/home/nick/NetBeansProjects/VegFinding/src/java/com/example/web/DbLogin.java</file>
+            <file>file:/home/nick/NetBeansProjects/VegFinding/src/java/com/example/web/MySqlConnect.java</file>
         </group>
     </open-files>
 </project-private>

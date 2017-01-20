@@ -8,6 +8,10 @@
         <servlet-name>DbRegister</servlet-name>
         <servlet-class>com.example.web.DbRegister</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DbLogin</servlet-name>
+        <servlet-class>com.example.web.DbLogin</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>DbRegister</servlet-name>
         <url-pattern>/DbRegister.do</url-pattern>
@@ -16,28 +20,9 @@
         <servlet-name>UthLogin</servlet-name>
         <url-pattern>/UthLogin.do</url-pattern>
     </servlet-mapping>
-    <servlet>
-        <servlet-name>DbLogin</servlet-name>
-        <servlet-class>com.example.web.DbLogin</servlet-class>
-    </servlet>
+    
     <servlet-mapping>
         <servlet-name>DbLogin</servlet-name>
         <url-pattern>/DbLogin.do</url-pattern>
     </servlet-mapping>
-    <listener>
-        <listener-class>com.example.model.LoginListener</listener-class>
-    </listener>
-    <servlet-mapping>
-        <servlet-name>DbLogin</servlet-name>
-        <url-pattern>/DbLogin</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>DbRegister</servlet-name>
-        <url-pattern>/DbRegister</url-pattern>
-    </servlet-mapping>
-    <session-config>
-        <session-timeout>
-            30
-        </session-timeout>
-    </session-config>
 </web-app>

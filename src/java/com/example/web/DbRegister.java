@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.sql.*;
 import java.util.Calendar;
+import javax.servlet.RequestDispatcher;
 
 /**
  *
@@ -46,6 +47,7 @@ public class DbRegister extends HttpServlet {
             out.println("Passwords do not match. Try again.");
         }
         else {
+            
             conn=MySqlConnect.ConnectDB();
             if (conn!= null) {
                 out.println("connection established");
@@ -61,10 +63,13 @@ public class DbRegister extends HttpServlet {
                 pst.execute();
                 
                 out.println("Register successfull");
+                RequestDispatcher view = request.getRequestDispatcher("MainPage.html");
+                view.forward(request, response);
 
             } catch (Exception e) {
                 out.println(e);
             }
+            
         }
          
      }

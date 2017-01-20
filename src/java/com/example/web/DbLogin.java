@@ -56,7 +56,5 @@ public class DbLogin extends HttpServlet {
         } catch (Exception e) {
             out.println(e);
         }
-         
      }
-
 }
