@@ -4,8 +4,21 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/home/nick/NetBeansProjects/VegFinding/src/java/com/example/web/DbRegister.java</file>
-            <file>file:/home/nick/NetBeansProjects/VegFinding/src/java/com/example/web/DbLogin.java</file>
+            <file>file:/home/nick/NetBeansProjects/VegFinding/web/home.jsp</file>
             <file>file:/home/nick/NetBeansProjects/VegFinding/src/java/com/example/web/MySqlConnect.java</file>
+            <file>file:/home/nick/NetBeansProjects/VegFinding/src/java/com/example/servlet/LogoutServlet.java</file>
+            <file>file:/home/nick/NetBeansProjects/VegFinding/src/java/com/example/servlet/RegisterServlet.java</file>
+            <file>file:/home/nick/NetBeansProjects/VegFinding/web/WEB-INF/web.xml</file>
+            <file>file:/home/nick/NetBeansProjects/VegFinding/src/java/com/example/web/UthLogin.java</file>
+            <file>file:/home/nick/NetBeansProjects/VegFinding/src/java/com/example/servlet/LoginServlet.java</file>
+            <file>file:/home/nick/NetBeansProjects/VegFinding/src/java/com/example/web/User.java</file>
+            <file>file:/home/nick/NetBeansProjects/VegFinding/web/CSS/GoogleMapsStyle.css</file>
+            <file>file:/home/nick/NetBeansProjects/VegFinding/web/WEB-INF/log4j.xml</file>
+            <file>file:/home/nick/NetBeansProjects/VegFinding/src/java/com/example/web/DbLogin.java</file>
+            <file>file:/home/nick/NetBeansProjects/VegFinding/src/java/com/example/web/DBConnectionManager.java</file>
+            <file>file:/home/nick/NetBeansProjects/VegFinding/src/java/com/example/servlet/listeners/AppContextListener.java</file>
+            <file>file:/home/nick/NetBeansProjects/VegFinding/src/java/com/example/servlet/filters/AuthenticationFilter.java</file>
+            <file>file:/home/nick/NetBeansProjects/VegFinding/web/LoginResults.jsp</file>
         </group>
     </open-files>
 </project-private>

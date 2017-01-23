@@ -38,8 +38,8 @@ public class UthLogin extends HttpServlet {
             view.forward(request,response);
          }
         else {
-             out.println(username + password + "incorrect");
-             out.println("Wrong username and password. Try again.");
+             //out.println(username + password + "incorrect");
+             //out.println("Wrong username and password. Try again.");
          }
          
      }

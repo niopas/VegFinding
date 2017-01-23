@@ -1,30 +1,38 @@
+<%@page import="com.example.web.User"%>
+<%@ page language="java" contentType="text/html; charset=US-ASCII"
+    pageEncoding="US-ASCII"%>
+
 <!DOCTYPE html>
 <html>
 <title>Main Page</title>
 
-<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <link rel="stylesheet" type="text/css" href="CSS/MainPageStyle.css">
 
 <body>
 
 
 <ul>
-    <li><a class="active" href="#home">Veg<span>Finding</span></a></li>
+  <li><a class="active" href="#home">Veg<span>Finding</span></a></li>
   <li><a href="#profile">Profile</a></li>
   <li><a href="GoogleMaps.html">Find food</a></li>
   <li><a href="#contact">Contact us</a></li>
+  <%User user = (User) session.getAttribute("User"); %>
+  <li><a class="profile" href="#">Hi, <span><%=user.getName()%></span></a></li>
+  <li><form action="Logout" method="post">
+      <input type="submit" value="Logout" class="logout">
+      </form></li>
 </ul>
-    
-    
+  
+  
 <!-- Automatic Slideshow Images -->
-  <div class="mySlides w3-display-container w3-center">
-    <img src="CSS/images/autoimage1.jpg" style="width:100%">
+  <div class="img">
+    <img src="CSS/images/autoimage4.jpg">
   </div>
-  <div class="mySlides w3-display-container w3-center">
-    <img src="CSS/images/autoimage2.jpg" style="width:100%">
+  <div class="img">
+    <img src="CSS/images/autoimage1.jpg">
   </div>
-  <div class="mySlides w3-display-container w3-center">
-    <img src="CSS/images/autoimage3.jpg" style="width:100%">
+  <div class="img">
+    <img src="CSS/images/autoimage3.jpg">
   </div>
 
 
@@ -36,7 +44,7 @@ carousel();
 
 function carousel() {
     var i;
-    var x = document.getElementsByClassName("mySlides");
+    var x = document.getElementsByClassName("img");
     for (i = 0; i < x.length; i++) {
        x[i].style.display = "none";  
     }
