@@ -13,25 +13,25 @@
         <url-pattern>/UthLogin.do</url-pattern>
     </servlet-mapping>
     
-<!--    <context-param>
+    <context-param>
         <param-name>log4j-config</param-name>
         <param-value>WEB-INF/log4j.xml</param-value>
     </context-param>
 
 
--->    <context-param>
+    <context-param>
         <param-name>dbUser</param-name>
         <param-value>root</param-value>
     </context-param>
     <context-param>
         <param-name>dbPassword</param-name>
-        <param-value>12312312333</param-value>
+        <param-value>XUpa0m0R3x</param-value>
     </context-param>
     <context-param>
         <param-name>dbURL</param-name>
         <param-value>jdbc:mysql://localhost:3306/userdb</param-value>
-    </context-param><!--
-    
+    </context-param>
+      
     <error-page>
         <error-code>404</error-code>
         <location>/AppErrorHandler</location>
@@ -40,5 +40,14 @@
         <exception-type>java.lang.Throwable</exception-type>
         <location>/AppErrorHandler</location>
     </error-page>
-  -->
+    
+    <filter>
+        <filter-name>AuthenticationFilter</filter-name>
+        <filter-class>com.example.servlet.filters.AuthenticationFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>AuthenticationFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+  
 </web-app>

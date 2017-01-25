@@ -14,7 +14,7 @@
 <ul>
   <li><a class="active" href="#home">Veg<span>Finding</span></a></li>
   <li><a href="#profile">Profile</a></li>
-  <li><a href="GoogleMaps.html">Find food</a></li>
+  <li><a href="GoogleMaps.jsp">Find food</a></li>
   <li><a href="#contact">Contact us</a></li>
   <%User user = (User) session.getAttribute("User"); %>
   <li><a class="profile" href="#">Hi, <span><%=user.getName()%></span></a></li>
@@ -49,7 +49,7 @@ function carousel() {
        x[i].style.display = "none";  
     }
     myIndex++;
-    if (myIndex > x.length) {myIndex = 1}    
+    if (myIndex > x.length) {myIndex = 1;}    
     x[myIndex-1].style.display = "block";  
     setTimeout(carousel, 5000);    
 }

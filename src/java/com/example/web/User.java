@@ -9,7 +9,6 @@ public class User implements Serializable{
 	private String name;
 	private String email;
 	private int id;
-	private String country;
 	
 	public User(String nm, String em, int i){
 		this.name=nm;

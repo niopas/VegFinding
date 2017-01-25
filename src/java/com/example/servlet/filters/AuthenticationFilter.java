@@ -33,8 +33,8 @@ public class AuthenticationFilter implements Filter {
 		logger.info("Requested Resource::"+uri);
 		
 		HttpSession session = req.getSession(false);
-		
-		if(session == null && !(uri.endsWith("Login") || uri.endsWith("Register"))){
+                           
+                if(session == null && !(uri.endsWith("png") || uri.endsWith("jpg") || uri.endsWith("css")|| uri.endsWith("html") || uri.endsWith("Login") || uri.endsWith("Register"))){
 			logger.error("Unauthorized access request");
 			res.sendRedirect("index.html");
 		}else{

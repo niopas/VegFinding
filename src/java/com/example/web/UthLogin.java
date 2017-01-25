@@ -6,7 +6,6 @@
 package com.example.web;
 
 import com.example.model.UthLdap;
-import com.example.model.LoginListener;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import java.io.*;
@@ -21,7 +20,6 @@ public class UthLogin extends HttpServlet {
         int SessionNum;
          
         response.setContentType("text/html");
-        LoginListener loginSession=new LoginListener();
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         UthLdap login=new UthLdap(username,password);
@@ -32,8 +30,6 @@ public class UthLogin extends HttpServlet {
             info.add(login.getMail());
             info.add(login.getBirthYear());
             request.setAttribute("info",info);
-            SessionNum=loginSession.getSessionNum();
-            request.setAttribute("Active_Sessions",SessionNum);
             RequestDispatcher view = request.getRequestDispatcher("LoginResults.jsp");
             view.forward(request,response);
          }
