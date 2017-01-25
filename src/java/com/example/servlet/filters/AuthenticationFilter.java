@@ -37,7 +37,8 @@ public class AuthenticationFilter implements Filter {
                 if(session == null && !(uri.endsWith("png") || uri.endsWith("jpg") || uri.endsWith("css")|| uri.endsWith("html") || uri.endsWith("Login") || uri.endsWith("Register"))){
 			logger.error("Unauthorized access request");
 			res.sendRedirect("index.html");
-		}else{
+		}
+                else{
 			// pass the request along the filter chain
 			chain.doFilter(request, response);
 		}

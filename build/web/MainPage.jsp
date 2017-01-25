@@ -4,7 +4,7 @@
 
 <!DOCTYPE html>
 <html>
-<title>Main Page</title>
+<title>VegFinding</title>
 
 <link rel="stylesheet" type="text/css" href="CSS/MainPageStyle.css">
 
@@ -12,7 +12,7 @@
 
 
 <ul>
-  <li><a class="active" href="#home">Veg<span>Finding</span></a></li>
+  <li><a class="active" href="MainPage.jsp">Veg<span>Finding</span></a></li>
   <li><a href="#profile">Profile</a></li>
   <li><a href="GoogleMaps.jsp">Find food</a></li>
   <li><a href="#contact">Contact us</a></li>
