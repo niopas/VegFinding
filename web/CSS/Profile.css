@@ -1,0 +1,123 @@
+@import url(http://fonts.googleapis.com/css?family=Exo:100,200,400);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:700,400,300);
+
+
+ul {
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width:100%;
+    height: 6%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #0A2A0A;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    font-family: 'Exo', sans-serif;
+    font-size: 20px;
+    font-weight: 200;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li form {
+    display: block;
+    color: white;
+    text-align: center;
+    font-family: 'Exo', sans-serif;
+    font-size: 20px;
+    font-weight: 200;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.active span{
+    color: #01DF01 !important;
+}
+.profile {
+    position: fixed;
+    right: 100px;
+}
+.logout {
+    position: fixed;
+    top:0;
+    right: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: block;
+    color: white;
+    text-align: center;
+    font-family: 'Exo', sans-serif;
+    font-size: 20px;
+    font-weight: 200;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.profile span{
+    color: #01DF01 !important;
+}
+
+li a:hover {
+    background-color: #0B3B0B;
+}
+.logout:hover {
+    background-color: #0B3B0B;
+}
+
+body{
+	margin: 0;
+	padding: 0;
+	background: #fff;
+
+	color: #fff;
+	font-family: Arial;
+	font-size: 12px;
+}
+
+.body{
+	position: absolute;
+	top: 6%;
+        left: 0;
+	width: 100%;
+	height: 94%;
+	background-image: url("images/addForm.jpg");
+	background-size: cover;
+	z-index: 0;
+        opacity: 0.8;
+}
+.prof {
+    position: fixed;
+    top: 20%; 
+    left: 30%;
+    width:30%;
+    height: 20%;
+    margin: 0;
+    padding: 5%;
+    overflow: hidden;
+    background-color: #0A2A0A;
+    opacity: 0.6;
+    z-index: 2;
+}
+
+div a {
+    display: block;
+    color: white;
+    text-align: center;
+    font-family: 'Exo', sans-serif;
+    font-size: 20px;
+    font-weight: 200;
+    padding: 14px 16px;
+    text-decoration: none;
+    z-index: 2;
+}

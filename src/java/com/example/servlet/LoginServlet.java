@@ -71,14 +71,14 @@ public class LoginServlet extends HttpServlet {
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		try {
-			ps = con.prepareStatement("select id, username, email from credentials where username=? and password=? limit 1");
+			ps = con.prepareStatement("select id, username, email, signup_date from credentials where username=? and password=? limit 1");
 			ps.setString(1, username);
 			ps.setString(2, password);
 			rs = ps.executeQuery();
 			
 			if(rs != null && rs.next()){
 				
-                            User user = new User(rs.getString("username"), rs.getString("email"), rs.getInt("id"));
+                            User user = new User(rs.getString("username"), rs.getString("email"), rs.getInt("id"), rs.getDate("signup_date"));
                             logger.info("User found with details="+user);
                             HttpSession session = request.getSession();
                             session.setAttribute("User", user);

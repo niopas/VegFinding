@@ -1,6 +1,7 @@
 package com.example.web;
 
 import java.io.Serializable;
+import java.util.Calendar;
 
 public class User implements Serializable{
 	
@@ -9,11 +10,13 @@ public class User implements Serializable{
 	private String name;
 	private String email;
 	private int id;
+        private java.sql.Date date;
 	
-	public User(String nm, String em, int i){
+	public User(String nm, String em, int i, java.sql.Date startDate){
 		this.name=nm;
 		this.email=em;
                 this.id=i;
+                this.date=startDate;
 	}
 
 	public void setName(String name) {
@@ -34,6 +37,9 @@ public class User implements Serializable{
 
 	public String getEmail() {
 		return email;
+	}
+        public java.sql.Date getDate() {
+		return date;
 	}
 	public int getId() {
 		return id;

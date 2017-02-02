@@ -35,8 +35,6 @@ public class AddRestaurantServlet extends HttpServlet {
             if (lat.equals("")) {
                 errorMsg = "PLease select a marker on the map.";
                 RequestDispatcher rd = getServletContext().getRequestDispatcher("/AddRestaurant.jsp");
-                PrintWriter out= response.getWriter();
-                out.println("<font color=red size=\"4\">"+errorMsg+"</font>");
                 rd.include(request, response);
             }else{
 		

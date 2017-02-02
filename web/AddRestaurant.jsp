@@ -14,9 +14,9 @@
             <li><a class="active" href="MainPage.jsp">Veg<span>Finding</span></a></li>
             <li><a href="FindFood.jsp">Find food</a></li>
             <li><a href="AddRestaurant.jsp">Add a Restaurant</a></li>
-            <li><a href="#contact">Contact us</a></li>
+            <li><a href="ContactUs.jsp">Contact us</a></li>
             <%User user = (User) session.getAttribute("User"); %>
-            <li><a class="profile" href="#">Hi, <span><%=user.getName()%></span></a></li>
+            <li><a class="profile" href="Profile.jsp">Hi, <span><%=user.getName()%></span></a></li>
             <li><form action="Logout" method="post">
                 <input type="submit" value="Logout" class="logout">
                 </form></li>
@@ -40,8 +40,7 @@
 
             </div>
         </form>
-            
-  
+
         <div id="map"></div>
         <script>
         var gmarkers = [];
