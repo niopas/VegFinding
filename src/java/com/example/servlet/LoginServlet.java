@@ -3,14 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.example.web;
+package com.example.servlet;
 
+import com.example.web.User;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -24,16 +27,15 @@ import org.apache.log4j.Logger;
 
 
 @WebServlet(name = "Login", urlPatterns = { "/Login" })
-public class DbLogin extends HttpServlet {
+public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	static Logger logger = Logger.getLogger(DbLogin.class);
+	static Logger logger = Logger.getLogger(LoginServlet.class);
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		String errorMsg = null;
-                
                 
 		if(username == null || username.equals("")){
 			errorMsg ="User Email can't be null or empty";
@@ -51,6 +53,21 @@ public class DbLogin extends HttpServlet {
 		}else{
 		
 		Connection con = (Connection) getServletContext().getAttribute("DBConnection");
+                if (con == null) {
+                    try {
+                        Class.forName("com.mysql.jdbc.Driver").newInstance();
+                        con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/userdb","root", "12312312333");
+                    } catch (SQLException ex) {
+                            java.util.logging.Logger.getLogger(LoginServlet.class.getName()).log(Level.SEVERE, null, ex);
+                    } catch (ClassNotFoundException ex) {   
+                        java.util.logging.Logger.getLogger(LoginServlet.class.getName()).log(Level.SEVERE, null, ex);
+                    } catch (InstantiationException ex) {
+                        java.util.logging.Logger.getLogger(LoginServlet.class.getName()).log(Level.SEVERE, null, ex);
+                    } catch (IllegalAccessException ex) {
+                        java.util.logging.Logger.getLogger(LoginServlet.class.getName()).log(Level.SEVERE, null, ex);
+                    }   
+                }
+
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		try {

@@ -25,15 +25,15 @@ public class AppContextListener implements ServletContextListener {
     	String user = ctx.getInitParameter("dbUser");
     	String pwd = ctx.getInitParameter("dbPassword");
     	
-	try {
-            DBConnectionManager connectionManager = new DBConnectionManager(dbURL, user, pwd);
-            ctx.setAttribute("DBConnection", connectionManager.getConnection());
-            System.out.println("DB Connection initialized successfully.");
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+//	try {
+//            DBConnectionManager connectionManager = new DBConnectionManager(dbURL, user, pwd);
+//            ctx.setAttribute("DBConnection", connectionManager.getConnection());
+//            System.out.println("DB Connection initialized successfully.");
+//        } catch (ClassNotFoundException e) {
+//            e.printStackTrace();
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
 
     	
     	//initialize log4j

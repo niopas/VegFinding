@@ -13,8 +13,8 @@
 
 <ul>
   <li><a class="active" href="MainPage.jsp">Veg<span>Finding</span></a></li>
-  <li><a href="#profile">Profile</a></li>
-  <li><a href="GoogleMaps.jsp">Find food</a></li>
+  <li><a href="FindFood.jsp">Find food</a></li>
+  <li><a href="AddRestaurant.jsp">Add a Restaurant</a></li>
   <li><a href="#contact">Contact us</a></li>
   <%User user = (User) session.getAttribute("User"); %>
   <li><a class="profile" href="#">Hi, <span><%=user.getName()%></span></a></li>

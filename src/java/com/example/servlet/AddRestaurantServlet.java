@@ -6,7 +6,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.Calendar;
 import java.util.logging.Level;
 
 import javax.servlet.RequestDispatcher;
@@ -18,34 +17,30 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
 
-@WebServlet(name = "Register", urlPatterns = { "/Register" })
-public class RegisterServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+@WebServlet(name = "AddRestaurant", urlPatterns = { "/AddRestaurant" })
+public class AddRestaurantServlet extends HttpServlet {
 
 	static Logger logger = Logger.getLogger(RegisterServlet.class);
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-            String username = request.getParameter("username");
-            String password = request.getParameter("password");
-            String re_password = request.getParameter("re_password");
-            String email = request.getParameter("email");
+            String RestaurantName = request.getParameter("RestaurantName");
+            String FoodOption = request.getParameter("FoodOption");
+            String Description = request.getParameter("Description");
+            String Rating = request.getParameter("Rating");
+            String lat = request.getParameter("lat");
+            String lng = request.getParameter("lng");
             String errorMsg = null;
-            
-            Calendar calendar = Calendar.getInstance();
-            java.sql.Date startDate = new java.sql.Date(calendar.getTime().getTime());
-		
-            if (!password.equals(re_password)) {
-                errorMsg = "The passwords do not match.";
-                RequestDispatcher rd = getServletContext().getRequestDispatcher("/Register.html");
+            		
+            if (lat.equals("")) {
+                errorMsg = "PLease select a marker on the map.";
+                RequestDispatcher rd = getServletContext().getRequestDispatcher("/AddRestaurant.jsp");
                 PrintWriter out= response.getWriter();
-                //out.println("<font color=red size=\"4\">"+errorMsg+"</font>");
+                out.println("<font color=red size=\"4\">"+errorMsg+"</font>");
                 rd.include(request, response);
             }else{
-                
 		
-		Connection con = (Connection) getServletContext().getAttribute("DBConnection");
-                if (con == null) {
+		Connection con = null;
                     try {
                         Class.forName("com.mysql.jdbc.Driver").newInstance();
                         con = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/userdb","root", "12312312333");
@@ -58,23 +53,28 @@ public class RegisterServlet extends HttpServlet {
                     } catch (IllegalAccessException ex) {
                         java.util.logging.Logger.getLogger(RegisterServlet.class.getName()).log(Level.SEVERE, null, ex);
                     }   
-                }
+
+                
 		PreparedStatement ps = null;
+                float a=5;
+                int b=4;
 		try {
-                    ps = con.prepareStatement("INSERT INTO credentials VALUES (?,?,?,?,?)");
-                    ps.setString(1, null);
-                    ps.setString(2, username);
-                    ps.setString(3, password);
-                    ps.setString(4, email);
-                    ps.setDate(5, startDate);
+//                    ps = con.prepareStatement("INSERT INTO restaurants VALUES (?,?,?,?,?,?,?)");
+
+                    ps = con.prepareStatement("INSERT INTO restaurants(name, foodOptions, description, rating, lat, lng) VALUES (?,?,?,?,?,?)");
+                    
+                    //ps.setInt(1, b);
+                    ps.setString(1, RestaurantName);
+                    ps.setString(2, FoodOption);
+                    ps.setString(3, Description);
+                    ps.setInt(4, Integer.parseInt(Rating));
+                    ps.setFloat(5, Float.parseFloat(lat));
+                    ps.setFloat(6, Float.parseFloat(lng));
                     ps.execute();
+                    
 
-                    logger.info("User registered with username="+username);
-
-                    //forward to login page to login
-                    RequestDispatcher rd = getServletContext().getRequestDispatcher("/index.html");
+                    RequestDispatcher rd = getServletContext().getRequestDispatcher("/FindFood.jsp");
                     PrintWriter out= response.getWriter();
-                    //out.println("<font color=green size=\"4\">Registration successful, please login below.</font>");
                     rd.include(request, response);
 		} catch (SQLException e) {
 			e.printStackTrace();
